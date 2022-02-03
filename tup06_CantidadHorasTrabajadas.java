@@ -17,7 +17,7 @@ más de 180 horas las excedentes las cobra con un 50 % de aumento.
 
         if (cantidadHorasTrabajadas > 180) {
             double cantidadHorasExtra = cantidadHorasTrabajadas - 180;
-            double montoHorasExtra = (cantidadHorasExtra * sueldoPorHora) * 1.5;
+            double montoHorasExtra = (cantidadHorasExtra * sueldoPorHora) * 0.5;
             double montoACobrar = (cantidadHorasTrabajadas * sueldoPorHora) + montoHorasExtra;
 
             System.out.println("El empleado trabajo "+cantidadHorasTrabajadas+ " horas");
