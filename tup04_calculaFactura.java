@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class tu04_calculaFactura {
+public class tup04_calculaFactura {
 /*
 4. Hacer un programa que ingrese los datos de una factura en la cual haya tres artículos vendidos.
 De cada artículo ingresar el precio unitario y la cantidad.
@@ -31,7 +31,7 @@ Imprimir el total de la factura
         System.out.println("La suma total de los articulos es: $" + suma);
 
 
-
+        sc.close();
         
     } 
 

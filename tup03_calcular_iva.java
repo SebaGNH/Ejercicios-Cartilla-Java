@@ -7,14 +7,16 @@ el precio con IVA.
 */
     public static void main(String[] args) throws Exception{
         
-        Scanner Scaner = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         
         System.out.println("Por favor, ingrese el monto del articulo");
-        double precioArticulo = Scaner.nextDouble();
+        double precioArticulo = sc.nextDouble();
         
         double precioConIva = 1.21 * precioArticulo;
         
         System.out.println("El precio final con IVA es: "+ precioConIva + " pesos.");
+
+        sc.close();
     }
     
 }
