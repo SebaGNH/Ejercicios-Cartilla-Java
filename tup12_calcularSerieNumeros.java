@@ -8,7 +8,6 @@ Calcular el resultado de la serie 1+2+3+. . . +100.
         do{
             contador ++;
             acumulador += contador;
-            //System.out.println(contador +" "+acumulador);
         }while(contador < 100);
 
         System.out.println("El resultado de la suma es: "+ acumulador);

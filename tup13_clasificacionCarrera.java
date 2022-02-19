@@ -14,7 +14,6 @@ su tiempo de clasificación no puede superar en 15 % al del ganador.
         double tiempoClasificacion = tiempoGanador * 1.15;
         int contador = 0;
         int tiempoOtrosCorredores = 0;
-        //System.out.println(tiempoClasificacion);
 
         System.out.println("Ingrese el tiempo de los otro 9 corredores");
         for (int i = 1; i <= 9; i++) {
