@@ -76,9 +76,7 @@ public class tup21_alumnoCurso {
 /* Fin <<<<-- Salida de resultados ----- ----- ----- ----- ----- ----- ----- */
 
         sc.close();
-
     }
-
 }
 
 class Alumno{

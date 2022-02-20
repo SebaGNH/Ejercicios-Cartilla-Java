@@ -16,24 +16,21 @@ public class tup23_cursoAlumnos {
         System.out.println("Ingrese la cantidad de alumnos Inscriptos");
         int cantAlumnos = sc.nextInt();
         
-        Curso curso = new Curso(nombreCurso,cantAlumnos);
-
-        //String promedioDosDecimales = ""; 
-        
+        Curso curso = new Curso(nombreCurso,cantAlumnos); 
+        Alumno nuevoAlumno;       
 /* Fin <<<<-- Declaracion de variables iniciales ----- ----- ----- ----- ----- ----- ----- */
-        
+
 
 /* Inicio <-- Carga Curso con alumnos ----- ----- ----- ----- ----- ----- ----- */
         for (int i = 0; i < cantAlumnos; i++) {
-            System.out.println("Ingrese el nombre del Alumno");
+            System.out.println("Ingrese el nombre del Alumno "+ (i+1));
             String nombreAlumno = sc.next();
             System.out.println("Ingrese el legajo de "+ nombreAlumno);
             int legajo = sc.nextInt();
             System.out.println("Ingrese la cantidad de notas del alumno "+ nombreAlumno);
             int cantidadNotas = sc.nextInt();
 
-            Alumno nuevoAlumno = new Alumno(nombreAlumno, legajo, cantidadNotas);
-            
+            nuevoAlumno = new Alumno(nombreAlumno, legajo, cantidadNotas);
 
 
             for (int j = 0; j < cantidadNotas; j++) {
@@ -47,17 +44,13 @@ public class tup23_cursoAlumnos {
 /* Fin <<<<-- Carga Curso con alumnos ----- ----- ----- ----- ----- ----- ----- */
 
 /* Inicio <-- Salida de resultados ----- ----- ----- ----- ----- ----- ----- */
-        //promedioGeneral = promedioGeneral / alumno.length;
-        //promedioDosDecimales = String.format("%.2f", promedioGeneral);
-
-
         System.out.println("El nombre del curso es: "+ nombreCurso);
-        //System.out.println("Listado de alumnos: \n"+ ListadoAlumnos);
-       // System.out.println("Promedio General: "+promedioDosDecimales);
         System.out.println("Cantidad Alumnos con promedio mayor a 8: "+ curso.getCantMayorOcho());
+        System.out.println("El promedio general es de: "+ curso.getPromedioGeneral());
+        System.out.println("Los alumnos son: \n"+ curso.getListadoAlumnos());
 /* Fin <<<<-- Salida de resultados ----- ----- ----- ----- ----- ----- ----- */
         
-                sc.close();
+        sc.close();
         
     }
 }
@@ -147,11 +140,12 @@ class Curso{
         for (int i = 0; i < alumnos.length; i++) {
             if (alumnos[i] == null) {
                 alumnos[i] = nuevoAlumno;
+                break;
             }
         }
     }
 
-    public double promedioGeneral(){
+    public double getPromedioGeneral(){
         double acumuladorNotas = 0;
         int contador = 0;
         for (int i = 0; i < alumnos.length; i++) {
@@ -174,5 +168,13 @@ class Curso{
         return contadorMayorOcho;
     }
 
-
+    public String getListadoAlumnos(){
+        String listadoAlumnos = "";
+        for (int i = 0; i < alumnos.length; i++) {
+            if (alumnos[i] != null) {
+                listadoAlumnos += alumnos[i].toString()+ "\n";
+            }
+        }
+        return listadoAlumnos;
+    }
 }
