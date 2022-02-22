@@ -168,15 +168,16 @@ class Paciente{
 
 
     public float getPagoTotalPaciente(){
-        return (float)(((prestacion.getmonto() * this.cantidadSesiones)* coberturaObraSocial)/100);
+        //return (float)(((prestacion.getmonto() * this.cantidadSesiones)* coberturaObraSocial)/100);
+        float montoNeto = this.prestacion.getmonto() * this.cantidadSesiones;
+        float descuento = montoNeto * this.coberturaObraSocial / 100;
+        return montoNeto - descuento;
     }
 
     //método que devuelva el monto promedio de las bonificaciones de las obras sociales.
     public float getBonificacioneObraSocial(){
         float montoAPagar = (float)(prestacion.getmonto() * this.cantidadSesiones);
-        float bonificacion = montoAPagar * this.coberturaObraSocial / 100;
-        return montoAPagar - bonificacion;
-        
+        return montoAPagar * this.coberturaObraSocial / 100; 
     }
 
 }
