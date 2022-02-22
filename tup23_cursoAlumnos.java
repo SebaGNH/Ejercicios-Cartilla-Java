@@ -46,8 +46,13 @@ public class tup23_cursoAlumnos {
 /* Inicio <-- Salida de resultados ----- ----- ----- ----- ----- ----- ----- */
         System.out.println("El nombre del curso es: "+ nombreCurso);
         System.out.println("Cantidad Alumnos con promedio mayor a 8: "+ curso.getCantMayorOcho());
-        System.out.println("El promedio general es de: "+ curso.getPromedioGeneral());
+        String promedioGeneral = String.format("%.2f",curso.getPromedioGeneral());//Método que muestra dos decimales
+        System.out.println("El promedio general es de: "+ promedioGeneral); 
+        //System.out.println("El promedio general es de: "+ curso.getPromedioGeneral());
+
         System.out.println("Los alumnos son: \n"+ curso.getListadoAlumnos());
+        System.out.println("-----------------------------------------------------------");
+        System.out.println("Lista de alumnos usando StringBuilder: \n"+ curso.getListadoStringBuilder());
 /* Fin <<<<-- Salida de resultados ----- ----- ----- ----- ----- ----- ----- */
         
         sc.close();
@@ -136,6 +141,7 @@ class Curso{
         this.alumnos = new Alumno[cantAlumnos];
     }
 
+    //Agregar alumnos
     public void agregarAlumno(Alumno nuevoAlumno){
         for (int i = 0; i < alumnos.length; i++) {
             if (alumnos[i] == null) {
@@ -145,6 +151,7 @@ class Curso{
         }
     }
 
+    //Promedio general de todos los alumnos
     public double getPromedioGeneral(){
         double acumuladorNotas = 0;
         int contador = 0;
@@ -157,7 +164,7 @@ class Curso{
         return (double)(acumuladorNotas / contador);
     }
 
-
+    //Obtiene cantidad de alumnos con promedio mayor a 8
     public int getCantMayorOcho(){
         int contadorMayorOcho = 0;
         for (int i = 0; i < alumnos.length; i++) {
@@ -168,6 +175,7 @@ class Curso{
         return contadorMayorOcho;
     }
 
+    //Obtiene lista de alumnos
     public String getListadoAlumnos(){
         String listadoAlumnos = "";
         for (int i = 0; i < alumnos.length; i++) {
@@ -177,4 +185,20 @@ class Curso{
         }
         return listadoAlumnos;
     }
+    //Lista de alumnos utilizando String Builder
+    public String getListadoStringBuilder(){
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < alumnos.length; i++) {
+            if (alumnos[i] !=null) {
+                sb.append(alumnos[i].toString());
+                sb.append("\n");
+            }
+        }
+        return sb.toString();
+    }
+
+
+
+
+
 }

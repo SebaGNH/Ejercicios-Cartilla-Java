@@ -13,7 +13,7 @@ contendientes y atributos necesarios para indicar el resultado del mismo.
 
 class Equpo{
 
-    private String nombreEquipo;
+   // private String nombreEquipo;
     
 
 
@@ -24,6 +24,6 @@ class Equpo{
 }
 
 class liga{
-    private int puntos;
+    //private int puntos;
     //private int
 }
