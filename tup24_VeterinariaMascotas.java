@@ -1,6 +1,3 @@
-import java.util.Scanner;
-
-public class tup24_VeterinariaMascotas { 
 /*29
 Una Veterinaria encargada del cuidado de mascotas ha solicitado la realización
 de un software para obtener resultados sobre sus clientes y sus
@@ -17,7 +14,8 @@ Se pide:
     Mostrar el promedio de edad de las mascotas.
     Informar cuántos clientes tienen una antigüedad mayor igual a 5 años.
 */    
-
+import java.util.Scanner;
+public class tup24_VeterinariaMascotas { 
     public static void main(String[] args) throws Exception{
         Scanner sc = new Scanner(System.in);
 
@@ -146,6 +144,8 @@ class Veterinaria{
         clientes = new Cliente[cantClientes];
     }
 
+    
+
     public void agregarClientes(Cliente cliente){
         for (int i = 0; i < clientes.length; i++) {
             if (clientes[i] == null) {
@@ -189,9 +189,7 @@ class Veterinaria{
         }
         return contador;
     }
+    
 }
-
-//29
-
 
 

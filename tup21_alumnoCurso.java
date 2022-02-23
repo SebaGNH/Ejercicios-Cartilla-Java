@@ -137,7 +137,5 @@ class Alumno{
     @Override
     public String toString(){
         return "Nombre del Alumno: " +this.nombreAlumno+ ", Legajo: "+this.legajo+ ", Promedio: "+ getPromedio(); 
-    }
-    
+    }    
 }
-

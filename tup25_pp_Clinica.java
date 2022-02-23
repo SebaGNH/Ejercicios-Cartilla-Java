@@ -1,4 +1,4 @@
-/*
+/*30
 1. Desarrolle la clase Prestacion que contiene los siguiente atributos: codigo (int), descripcion (String), monto (float). 
 2. Desarrolle la clase Paciente que contiene los siguiente atributos: dni (int), nombre (String), apellido (String), 
 coberturaObraSocial (int), prestacion (Prestacion), cantidadSesiones (int).
