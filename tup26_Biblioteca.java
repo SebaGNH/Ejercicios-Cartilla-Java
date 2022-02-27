@@ -118,17 +118,82 @@ class Libro{
         this.prestamo = prestamo;
     }
 
+    public float getPrecioReposicion(){
+        float acumuladorPrecio = 0;
+        if (estado == 3) {
+            acumuladorPrecio += precioReposicion; 
+        }
+        return acumuladorPrecio;
+    }
+
     @Override
     public String toString(){
         return "Libro Titulo: "+ this.titulo+", precio de reposicion: "+ this.precioReposicion+ ", estado: "+ getElEstado() + prestamo.toString();
     }
+}
 
+class Biblioteca{
+    Libro[] libros;
 
-    class Biblioteca{
-        Libro[] libros;
+    public Biblioteca(int cantLibros){
+        libros = new Libro[cantLibros];
+    }
 
-        public Biblioteca(int cantLibros){
-            libros = new Libro[cantLibros];
+    public void agregarLibro(Libro libro){
+        for (int i = 0; i < libros.length; i++) {
+            if (libros[i]== null) {
+                libros[i] = libro;
+                break;
+            }
         }
     }
+    public String getCantLibrosPorEstado(){
+        int disponible = 0;
+        int prestado = 0;
+        int extraviado = 0;
+        for (Libro libro : libros) {
+            if (libro != null){
+                if (libro.getestado() == 1) {
+                    disponible ++;
+                }else if(libro.getestado() == 2){
+                    prestado ++;
+                }else if(libro.getestado() == 3){
+                    extraviado ++;
+                }
+            }
+        }    
+        return "disponibles: "+ disponible + ", prestado: "+ prestado+ ", extraviado: "+ extraviado;
+    }
+
+    public float getPrecioReposicionExtraviados(){
+        float sumaPrecioExtraviados = 0f;
+        for (Libro libro : libros) {
+            if (libro !=null && libro.getestado() == 3) {
+                sumaPrecioExtraviados += libro.getPrecioReposicion();
+            }
+        }
+        return sumaPrecioExtraviados;
+    }
+
+    public String getNombreSolicitantesPorNombreLibro(String nombreLibro){
+        String nombreSolicitantes = "";
+        for (Libro libro : libros) {
+            if(libro !=null && libro.gettitulo() == nombreLibro){
+                nombreSolicitantes += libro.getprestamo().getnombreSolicitante()+ "\n";
+            }
+        }
+        return nombreSolicitantes;
+    }
+
 }
+
+
+
+
+
+/*
+-Nombre de todos los solicitantes de un libro en particular identificado por su título
+
+-Promedio de veces que fueron prestados los libros de la biblioteca. 
+Es decir, se debe responder a la consulta de cuántas veces es prestado en promedio cada libro
+*/
