@@ -18,7 +18,7 @@ public class tup25_pp_Clinica {
         Scanner sc = new Scanner(System.in);
 
         //En el método Main cree un objeto Clinica, agregue 4 pacientes y muestre en pantalla lo que devuelva la ejecución de los puntos 6 y 7 del enunciado.
-        int cantidadPacientes = 2;
+        int cantidadPacientes = 4;
         Clinica clinica = new Clinica(cantidadPacientes);
 
         for (int i = 0; i < cantidadPacientes; i++) {
