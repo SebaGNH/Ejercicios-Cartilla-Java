@@ -30,7 +30,7 @@ public class tup26_Biblioteca {
             System.out.println("Ingrese el titulo del libro "+ (i+1));
             String titulo = sc.next();
 
-            System.out.println("Ingrese el precio de reposición del libro "+ titulo);
+            System.out.println("Ingrese el precio de reposicion del libro "+ titulo);
             float precioReposicion = sc.nextFloat();
 
             System.out.println("Ingrese 1 si esta Disponible, 2 si esta Prestado o 3 si se encuentra extraviado");
@@ -39,10 +39,10 @@ public class tup26_Biblioteca {
             System.out.println("Ingrese el nombre del solicitante");
             String nombreSolicitante = sc.next();
 
-            System.out.println("Ingrese la cantidad de días que será prestado");
+            System.out.println("Ingrese la cantidad de dias que sera prestado");
             int cantDiasPrestamo = sc.nextInt();
 
-            System.out.println("Ingrese 1 si es que fue devuelto o 2 si es que todavía no fue devuelto");
+            System.out.println("Ingrese 1 si es que fue devuelto o 2 si es que todavia no fue devuelto");
             int devuelto = sc.nextInt();
             boolean fueDevuelto = false;
             if (devuelto == 1) {
@@ -105,7 +105,7 @@ class Prestamo{
     }
 
     public String getDevuelto(){
-        if (getfueDevuelto()) {
+        if (this.fueDevuelto) {
             return ", fue devuelto.";
         }
         return ", no fue devuelto.";
