@@ -1,3 +1,4 @@
+package Tup1_Basicos;
 /*
 1. Ingresar 10 números por teclado, informar su suma y promedio.
 */

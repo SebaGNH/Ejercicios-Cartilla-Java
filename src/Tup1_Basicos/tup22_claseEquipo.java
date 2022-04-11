@@ -1,3 +1,4 @@
+package Tup1_Basicos;
 /*
 2. Agregar a la clase Equipo un arreglo con los datos de los jugadores. 
 De cada jugador se conoce su nombre, posición (1: arquero, 2: defensor, 3:

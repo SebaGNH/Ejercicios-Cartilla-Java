@@ -1,4 +1,4 @@
-package tup21_alumnoCurso;
+package Tup2_21_alumnoCurso;
 
 public class Alumno {
 

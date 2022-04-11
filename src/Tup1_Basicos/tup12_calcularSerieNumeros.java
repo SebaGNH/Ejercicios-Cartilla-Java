@@ -1,3 +1,4 @@
+package Tup1_Basicos;
 public class tup12_calcularSerieNumeros {
 /*
 Calcular el resultado de la serie 1+2+3+. . . +100.

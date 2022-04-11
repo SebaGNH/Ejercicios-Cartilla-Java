@@ -1,3 +1,4 @@
+package Tup1_Basicos;
 /*
 4. Programar una clase Equipo que represente a un equipo de fútbol. 
 

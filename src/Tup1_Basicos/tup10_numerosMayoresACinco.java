@@ -1,3 +1,4 @@
+package Tup1_Basicos;
 import java.util.Scanner;
 /*
 2. Ingresar un número n y a continuación n números positivos. 

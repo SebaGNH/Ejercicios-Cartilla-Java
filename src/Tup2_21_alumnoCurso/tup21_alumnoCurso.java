@@ -1,4 +1,4 @@
-package tup21_alumnoCurso;
+package Tup2_21_alumnoCurso;
 /*
 Modificar el ejercicio 2 para que el alumno en lugar de poseer un atributo con su promedio contenga un vector de notas.
 */

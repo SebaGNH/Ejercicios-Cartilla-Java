@@ -1,3 +1,4 @@
+package Tup1_Basicos;
 import java.util.Scanner;
 public class tup13_clasificacionCarrera {
 /*

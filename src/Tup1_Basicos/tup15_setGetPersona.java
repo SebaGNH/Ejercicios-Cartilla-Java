@@ -1,3 +1,4 @@
+package Tup1_Basicos;
 public class tup15_setGetPersona {
 /*
 Programar una clase Persona con los datos de una persona (nombre, apellido,

@@ -1,3 +1,4 @@
+package Tup1_Basicos;
 public class tup16_claseAuto {
 /*
 2 . Programar una clase Auto con datos de un automotor (marca, modelo, precio y kilometraje). Incluir un método que retorne la antigüedad del auto.
