@@ -1,9 +1,5 @@
 ## Cartilla de ejercicios
 
 
-17
-22
-24
-
-
+Dentro de cada paquete están las consignas
 

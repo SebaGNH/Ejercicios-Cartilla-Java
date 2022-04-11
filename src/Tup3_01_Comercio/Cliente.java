@@ -14,7 +14,7 @@ public class Cliente {
 
     @Override
     public String toString() {
-        return "Numero: " + numeroCliente + ", Nombre: " + nombreCliente + ", Telefono" + telefono;
+        return "Numero: " + numeroCliente + ", Nombre: " + nombreCliente + ", Telefono " + telefono;
     }
 
     public int getNumeroCliente() {
