@@ -4,9 +4,9 @@ public abstract class Cuenta {
 
     private int numero;
     private String nombre;
-    private float saldo;
+    private double saldo;
 
-    public Cuenta(int numero, String nombre, float saldo) {
+    public Cuenta(int numero, String nombre, double saldo) {
         this.numero = numero;
         this.nombre = nombre;
         this.saldo = saldo;
@@ -20,7 +20,11 @@ public abstract class Cuenta {
         return nombre;
     }
 
-    public float getSaldo() {
+    public void setSaldo(double saldo){
+        this.saldo = saldo;
+    }
+
+    public double getSaldo() {
         return saldo;
     }
 
@@ -30,8 +34,8 @@ public abstract class Cuenta {
     }
 
 
-    public abstract void depositar();
+    public abstract String depositar(double importe);
 
-    public abstract void extraer();
+    public abstract String extraer(double importe);
 
 }
