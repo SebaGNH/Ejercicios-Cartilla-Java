@@ -30,8 +30,8 @@ public abstract class Cuenta {
     }
 
 
-
     public abstract void depositar();
+
     public abstract void extraer();
-    
+
 }

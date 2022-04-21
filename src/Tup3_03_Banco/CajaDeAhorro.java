@@ -1,5 +1,8 @@
 package Tup3_03_Banco;
 
-public class CajaDeAhorro {
+public class CajaDeAhorro extends Cuenta{
+
+    
+
     
 }
