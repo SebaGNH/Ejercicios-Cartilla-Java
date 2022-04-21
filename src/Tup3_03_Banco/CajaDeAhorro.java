@@ -6,12 +6,13 @@ public class CajaDeAhorro extends Cuenta{
     public CajaDeAhorro(double impoerte, int numero, String nombre, double saldo){
         super(numero, nombre, saldo);
     }
+
     @Override
     public String toString(){
         return super.toString();
     }
 
-
+    @Override
     public String depositar(double importe){
         double saldo;
         if (importe > 0) {
@@ -22,7 +23,8 @@ public class CajaDeAhorro extends Cuenta{
         return "El monto ingresado debe ser mayor a $0, su saldo actual es de $"+ super.getSaldo();
     }
 
-    public String extracciones(double importe){
+    @Override
+    public String extraer(double importe){
         double saldo;
         if (importe > super.getSaldo()) {
             return "Saldo insuficiente, su saldo actual es de $" + super.getSaldo();
@@ -32,7 +34,4 @@ public class CajaDeAhorro extends Cuenta{
         
         return "Operación exitosa, tu saldo actual es de $" + super.getSaldo();
     }
-
-
-    
 }
