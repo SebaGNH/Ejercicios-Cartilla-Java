@@ -72,14 +72,12 @@ public class Empleados {
                     tipo = 0;
                 }else if (e instanceof Administrativo) {
                     tipo = 1;
-                } else if (condition) {
+                } else if (e instanceof Vendedor) {
                     tipo = 2;
                 }
                 acumuladorSueldo[tipo] += e.calcularSueldo(); 
             }
         }
-        return acumuladorSueldo[];
+        return acumuladorSueldo;
     }
-    
-
 }
