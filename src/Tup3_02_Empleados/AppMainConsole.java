@@ -1,10 +1,12 @@
 
 package Tup3_02_Empleados;
 
+import java.util.Scanner;
+
 public class AppMainConsole {
 public static void main(String[] args) throws Exception{
-    
-    Obrero o = new Obrero(111, "Marcos", 36000, 18);
+    Scanner sc = new Scanner(System.in);
+/*     Obrero o = new Obrero(111, "Marcos", 36000, 18);
 
     Administrativo a = new Administrativo(222, "Lucas", 36000, true);
 
@@ -12,6 +14,16 @@ public static void main(String[] args) throws Exception{
 
     System.out.println(o.toString());
     System.out.println(a.toString());
-    System.out.println(v.toString());
+    System.out.println(v.toString()); */
+
+    Empleados e;
+    System.out.print("Ingrese la cantidad de empleados que va a agregar: ");
+    int cantEmpleados = sc.nextInt();
+    for (int i = 0; i < cantEmpleados; i++) {
+        
+    }
+    
+
+    sc.close();
 }   
 }

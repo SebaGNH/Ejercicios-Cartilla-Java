@@ -8,3 +8,8 @@
     - Administrativo: cobra un monto fijo por mes más un 13 % si cumplió con el presentismo.
 
     - Vendedor: cobra un monto fijo por mes más una comisión de 1 % del total de sus ventas.
+
+* En base al ejercicio de empleados de la clase 7, 
+- hacer un programa que permita cargar los datos de todos los empleados de una empresa y efectúe la liquidación de los sueldo, 
+- mostrando un listado de todos los empleados y el sueldo neto que les corresponde cobrar. 
+- Finalmente mostrar el total a pagar en sueldo para cada tipo de empleados y el total general
