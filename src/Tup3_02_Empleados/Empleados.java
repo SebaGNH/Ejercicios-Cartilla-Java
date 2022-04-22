@@ -43,7 +43,7 @@ public class Empleados {
     }
 
     // Finalmente mostrar el total a pagar en sueldo para cada tipo de empleados y el total general
-    public String getMontoPorTipo(){
+/*     public String getMontoPorTipo(){
         double obrero = 0;
         double administrativo = 0;
         double vendedor = 0;
@@ -61,8 +61,25 @@ public class Empleados {
             montoGeneral += e.calcularSueldo();
         }
         return "\nObrero $"+ obrero+ "\nAdministrativo $"+administrativo+"\nVendedor $"+vendedor+"\nTotal General $"+montoGeneral;
-    }
+    } */
 
+    public double[] getSueldoPorTipo(){
+        int tipo = 0;
+        double acumuladorSueldo[] = {0,0,0};
+        for (Empleado e : empleados) {
+            if (e != null) {
+                if (e instanceof Obrero) {
+                    tipo = 0;
+                }else if (e instanceof Administrativo) {
+                    tipo = 1;
+                } else if (condition) {
+                    tipo = 2;
+                }
+                acumuladorSueldo[tipo] += e.calcularSueldo(); 
+            }
+        }
+        return acumuladorSueldo[];
+    }
     
 
 }
