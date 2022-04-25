@@ -1,11 +1,13 @@
 package Tup4_01_CursoAlumnos_Colecciones;
 
+import java.util.ArrayList;
+
 public class Alumno {
     
     
     private String nombreAlumno;
     private int legajo;
-    private int[] notas;
+    private ArrayList notas;
 
     public void setnombreAlumno (String nombreAlumno) {
         this.nombreAlumno = nombreAlumno;
@@ -22,41 +24,28 @@ public class Alumno {
     }   
 
 
-    public Alumno(){}
-    public Alumno(String nombreAlumno, int legajo,int cantidadNotas){
+    public Alumno(String nombreAlumno, int legajo){
         this.nombreAlumno = nombreAlumno;
-        this.legajo = legajo;
-        
-        this.notas = new int[cantidadNotas];
-        for (int i = 0; i < cantidadNotas; i++) {
-            this.notas[i] = -1;
-        }
+        this.legajo = legajo;        
+        this.notas = new ArrayList();
     }
 
     //Agregar nota
     public void agregarNotas(int nota){
-        for (int i = 0; i < notas.length; i++) {
-            if (notas[i] == -1) {
-                notas[i] = nota;
-            }
-        }
+        notas.add(nota);
     }
 
     //Obtener promedio
-    public double getPromedio(){
-        double promedio = 0;
-        int cantidadNotas = 0;
-
-        for (int i = 0; i < notas.length; i++) {
-            promedio += notas[i];
-            cantidadNotas ++;
+    public double getPromedioColecciones(){
+        int acumulador = 0;
+        for (Object nota : notas) {
+            acumulador += (int) nota;
         }
-        
-        return (double)promedio/cantidadNotas;
+        return (float) acumulador / notas.size();
     }
 
     @Override
     public String toString(){
-        return "Nombre del Alumno: " +this.nombreAlumno+ ", Legajo: "+this.legajo+ ", Promedio: "+ getPromedio(); 
+        return "Nombre del Alumno: " +this.nombreAlumno+ ", Legajo: "+this.legajo+ ", Promedio: "+ getPromedioColecciones(); 
     }      
 }

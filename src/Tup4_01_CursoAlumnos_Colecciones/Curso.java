@@ -1,10 +1,14 @@
 package Tup4_01_CursoAlumnos_Colecciones;
 
+import java.util.ArrayList;
+
+//import Tup2_F1_CursoAlumnos.Alumno;
+
 public class Curso {    
     
     private String nombreCurso;
-    private Alumno[] alumnos;
-
+    private ArrayList alumnos;
+    
     public void setnombreCurso (String nombreCurso) {
         this.nombreCurso = nombreCurso;
     }
@@ -12,66 +16,49 @@ public class Curso {
         return nombreCurso;
     }
 
-    public Curso(){}
-
-    public Curso(String nombreCurso, int cantAlumnos){
+    //Constructor
+    public Curso(String nombreCurso){
         this.nombreCurso = nombreCurso;
-        this.alumnos = new Alumno[cantAlumnos];
+        this.alumnos = new ArrayList();
     }
 
     //Agregar alumnos
     public void agregarAlumno(Alumno nuevoAlumno){
-        for (int i = 0; i < alumnos.length; i++) {
-            if (alumnos[i] == null) {
-                alumnos[i] = nuevoAlumno;
-                break;
-            }
-        }
+        alumnos.add(nuevoAlumno);
     }
 
     //Promedio general de todos los alumnos
     public double getPromedioGeneral(){
         double acumuladorNotas = 0;
-        int contador = 0;
-        for (int i = 0; i < alumnos.length; i++) {
-            if (alumnos[i] !=null) {                
-                acumuladorNotas += alumnos[i].getPromedio();
-                contador ++;
-            }
+        
+        for (Object object : alumnos) {
+            Alumno alumno = (Alumno) object;
+            acumuladorNotas += alumno.getPromedioColecciones();
         }
-        return (double)(acumuladorNotas / contador);
+        return (double)(acumuladorNotas / alumnos.size());
     }
 
     //Obtiene cantidad de alumnos con promedio mayor a 8
     public int getCantMayorOcho(){
         int contadorMayorOcho = 0;
-        for (int i = 0; i < alumnos.length; i++) {
-            if (alumnos[i].getPromedio() > 8 && alumnos[i]  != null) {
+        
+        for (Object object : alumnos) {
+            Alumno alumno = (Alumno) object;
+            if (alumno.getPromedioColecciones() > 8) {
                 contadorMayorOcho ++;
-            }
+            }            
         }
         return contadorMayorOcho;
     }
 
     //Obtiene lista de alumnos
     public String getListadoAlumnos(){
-        String listadoAlumnos = "";
-        for (int i = 0; i < alumnos.length; i++) {
-            if (alumnos[i] != null) {
-                listadoAlumnos += alumnos[i].toString()+ "\n";
-            }
+        StringBuilder listadoAlumnos = new StringBuilder();
+        
+        for (Object object : alumnos) {
+            Alumno a = (Alumno) object;
+            listadoAlumnos.append("\n"+a.toString());
         }
-        return listadoAlumnos;
+        return listadoAlumnos.toString();
     }
-    //Lista de alumnos utilizando String Builder
-    public String getListadoStringBuilder(){
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < alumnos.length; i++) {
-            if (alumnos[i] !=null) {
-                sb.append(alumnos[i].toString());
-                sb.append("\n");
-            }
-        }
-        return sb.toString();
-    }  
 }

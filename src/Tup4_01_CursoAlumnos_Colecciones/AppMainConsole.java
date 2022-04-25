@@ -9,12 +9,12 @@ public class AppMainConsole {
     Scanner sc = new Scanner(System.in);
 
     System.out.println("Ingrese el nombre del curso");
-    String nombreCurso = sc.next();
+    String nombreCurso = sc.nextLine();
 
     System.out.println("Ingrese la cantidad de alumnos Inscriptos");
     int cantAlumnos = sc.nextInt();
 
-    Curso curso = new Curso(nombreCurso,cantAlumnos); 
+    Curso curso = new Curso(nombreCurso); 
     Alumno nuevoAlumno;       
 /* Fin <<<<-- Declaracion de variables iniciales ----- ----- ----- ----- ----- ----- ----- */
 
@@ -28,7 +28,7 @@ public class AppMainConsole {
         System.out.println("Ingrese la cantidad de notas del alumno "+ nombreAlumno);
         int cantidadNotas = sc.nextInt();
 
-        nuevoAlumno = new Alumno(nombreAlumno, legajo, cantidadNotas);
+        nuevoAlumno = new Alumno(nombreAlumno, legajo);
 
 
         for (int j = 0; j < cantidadNotas; j++) {
@@ -48,9 +48,7 @@ public class AppMainConsole {
     System.out.println("El promedio general es de: "+ promedioGeneral); 
     //System.out.println("El promedio general es de: "+ curso.getPromedioGeneral());
 
-    System.out.println("Los alumnos son: \n"+ curso.getListadoAlumnos());
-    System.out.println("-----------------------------------------------------------");
-    System.out.println("Lista de alumnos usando StringBuilder: \n"+ curso.getListadoStringBuilder());
+    System.out.println("\nLos alumnos son: "+ curso.getListadoAlumnos());
 /* Fin <<<<-- Salida de resultados ----- ----- ----- ----- ----- ----- ----- */
 
     sc.close();
